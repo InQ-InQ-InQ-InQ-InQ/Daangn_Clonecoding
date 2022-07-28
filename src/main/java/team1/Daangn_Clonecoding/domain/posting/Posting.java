@@ -1,4 +1,4 @@
-package com.Daangn_Clonecoding.domain.posting;
+package team1.Daangn_Clonecoding.domain.posting;
 
 import lombok.AccessLevel;
 import lombok.Getter;

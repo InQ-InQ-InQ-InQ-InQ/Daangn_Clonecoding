@@ -1,4 +1,4 @@
-package com.Daangn_Clonecoding.config;
+package team1.Daangn_Clonecoding.config;
 
 import com.p6spy.engine.common.P6Util;
 import com.p6spy.engine.spy.P6SpyOptions;

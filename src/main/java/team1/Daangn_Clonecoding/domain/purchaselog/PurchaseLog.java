@@ -1,7 +1,7 @@
-package com.Daangn_Clonecoding.domain.purchaselog;
+package team1.Daangn_Clonecoding.domain.purchaselog;
 
-import com.Daangn_Clonecoding.domain.member.Member;
-import com.Daangn_Clonecoding.domain.posting.Posting;
+import team1.Daangn_Clonecoding.domain.member.Member;
+import team1.Daangn_Clonecoding.domain.posting.Posting;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +22,6 @@ public class PurchaseLog {
     private Member member;
 
     @ManyToOne
-    @JoinColumn(name = "posting_id")
-    @Column(unique = true)
+    @JoinColumn(name = "posting_id", unique = true)
     private Posting posting;
 }

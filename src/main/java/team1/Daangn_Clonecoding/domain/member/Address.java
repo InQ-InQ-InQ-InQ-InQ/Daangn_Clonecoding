@@ -1,4 +1,4 @@
-package com.Daangn_Clonecoding.domain.member;
+package team1.Daangn_Clonecoding.domain.member;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
