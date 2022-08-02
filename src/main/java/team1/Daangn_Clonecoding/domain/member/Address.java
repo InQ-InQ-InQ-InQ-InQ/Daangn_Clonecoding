@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
@@ -13,10 +14,13 @@ import javax.persistence.Embeddable;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Address {
 
+    @Column(nullable = false)
     private String city;
 
+    @Column(nullable = false)
     private String county;
 
+    @Column(nullable = false)
     private String district;
 
     public Address(String city, String county, String district) {

@@ -14,16 +14,21 @@ public class Posting {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String title;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private PostingType postingType;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Category category;
 
+    @Column(nullable = false)
     private String productName;
 
+    @Column(nullable = false)
     private String productPrice;
 
     private String explains;

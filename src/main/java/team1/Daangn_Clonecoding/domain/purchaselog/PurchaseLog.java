@@ -18,10 +18,10 @@ public class PurchaseLog {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_id", nullable = false)
     private Member member;
 
     @ManyToOne
-    @JoinColumn(name = "posting_id", unique = true)
+    @JoinColumn(name = "posting_id", unique = true, nullable = false)
     private Posting posting;
 }

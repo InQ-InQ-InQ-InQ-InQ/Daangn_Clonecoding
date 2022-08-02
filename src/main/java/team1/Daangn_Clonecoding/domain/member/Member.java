@@ -14,16 +14,21 @@ public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private String nickname;
 
+    @Column(nullable = false)
     private String loginId;
 
+    @Column(nullable = false)
     private String loginPw;
 
     @Embedded
     private Address address;
 
+    @Column(nullable = false)
     private Double mTemp = 36.5;
 }
