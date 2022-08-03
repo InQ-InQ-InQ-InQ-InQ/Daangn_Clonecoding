@@ -17,6 +17,9 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
+### application.properties 개별설정 ###
+application-private.yml
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
