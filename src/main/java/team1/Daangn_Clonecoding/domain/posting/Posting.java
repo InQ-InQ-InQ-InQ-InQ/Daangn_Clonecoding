@@ -3,6 +3,7 @@ package team1.Daangn_Clonecoding.domain.posting;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import team1.Daangn_Clonecoding.domain.file.UploadFile;
 
 import javax.persistence.*;
 
@@ -32,4 +33,7 @@ public class Posting {
     private String productPrice;
 
     private String explains;
+
+    @Embedded
+    private UploadFile uploadFile;
 }
