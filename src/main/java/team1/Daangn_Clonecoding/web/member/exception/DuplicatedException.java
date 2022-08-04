@@ -1,7 +1,7 @@
 package team1.Daangn_Clonecoding.web.member.exception;
 
-public class DuplicatedLoginIdException extends RuntimeException {
-    public DuplicatedLoginIdException(String s) {
+public class DuplicatedException extends RuntimeException {
+    public DuplicatedException(String s) {
         super(s);
     }
 }

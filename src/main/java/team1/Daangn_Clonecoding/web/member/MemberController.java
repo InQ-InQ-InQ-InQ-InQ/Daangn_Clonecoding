@@ -1,13 +1,12 @@
 package team1.Daangn_Clonecoding.web.member;
 
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import team1.Daangn_Clonecoding.domain.member.Address;
 import team1.Daangn_Clonecoding.domain.member.Member;
 import team1.Daangn_Clonecoding.domain.member.memberrepository.MemberRepository;
 import team1.Daangn_Clonecoding.web.member.dto.JoinForm;
-import team1.Daangn_Clonecoding.web.member.exception.DuplicatedLoginIdException;
+import team1.Daangn_Clonecoding.web.member.exception.DuplicatedException;
 import team1.Daangn_Clonecoding.web.response.Success;
 
 import java.util.Optional;
@@ -38,11 +37,22 @@ public class MemberController {
         Member findMember = optionalMember.orElse(null);
 
         if (findMember != null) {
-            throw new DuplicatedLoginIdException("로그인 아이디 중복");
+            throw new DuplicatedException("Duplicated_LoginId");
         }
 
         return new Success(true);
     }
 
+    @PostMapping("/join/nicknameDu")
+    public Success nicknameDuplicationCheck(@RequestParam String nickname) {
 
+        Optional<Member> optionalMember = memberRepository.findByNickname(nickname);
+        Member findMember = optionalMember.orElse(null);
+
+        if (findMember != null) {
+            throw new DuplicatedException("Duplicated_Nickname");
+        }
+
+        return new Success(true);
+    }
 }
