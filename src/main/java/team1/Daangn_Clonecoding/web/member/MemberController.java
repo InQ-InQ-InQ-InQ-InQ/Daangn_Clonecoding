@@ -7,6 +7,10 @@ import team1.Daangn_Clonecoding.domain.member.Address;
 import team1.Daangn_Clonecoding.domain.member.Member;
 import team1.Daangn_Clonecoding.domain.member.memberrepository.MemberRepository;
 import team1.Daangn_Clonecoding.web.member.dto.JoinForm;
+import team1.Daangn_Clonecoding.web.member.exception.DuplicatedLoginIdException;
+import team1.Daangn_Clonecoding.web.response.Success;
+
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -27,13 +31,18 @@ public class MemberController {
         return new Success(true);
     }
 
-    @Data
-    static class Success {
-        private boolean suc;
+    @PostMapping("/join/loginIdDu")
+    public Success loginIdDuplicationCheck(@RequestParam String loginId) {
 
-        public Success(boolean suc) {
-            this.suc = suc;
+        Optional<Member> optionalMember = memberRepository.findByLoginId(loginId);
+        Member findMember = optionalMember.orElse(null);
+
+        if (findMember != null) {
+            throw new DuplicatedLoginIdException("로그인 아이디 중복");
         }
+
+        return new Success(true);
     }
+
 
 }
