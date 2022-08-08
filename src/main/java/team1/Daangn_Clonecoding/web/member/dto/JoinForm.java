@@ -12,13 +12,13 @@ public class JoinForm {
 
     private String nickname;
 
+    private String phoneNumber;
+
     private String loginId;
 
     private String loginPw;
 
     private String city;
 
-    private String country;
-
-    private String district;
+    private String town;
 }

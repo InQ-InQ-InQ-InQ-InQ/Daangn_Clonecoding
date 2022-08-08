@@ -18,14 +18,10 @@ public class Address {
     private String city;
 
     @Column(nullable = false)
-    private String county;
+    private String town;
 
-    @Column(nullable = false)
-    private String district;
-
-    public Address(String city, String county, String district) {
+    public Address(String city, String town) {
         this.city = city;
-        this.county = county;
-        this.district = district;
+        this.town = town;
     }
 }

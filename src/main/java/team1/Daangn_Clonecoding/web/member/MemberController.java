@@ -6,7 +6,7 @@ import team1.Daangn_Clonecoding.domain.member.Address;
 import team1.Daangn_Clonecoding.domain.member.Member;
 import team1.Daangn_Clonecoding.domain.member.memberrepository.MemberRepository;
 import team1.Daangn_Clonecoding.web.member.dto.JoinForm;
-import team1.Daangn_Clonecoding.web.member.exception.DuplicatedException;
+import team1.Daangn_Clonecoding.web.exception.DuplicatedException;
 import team1.Daangn_Clonecoding.web.response.Success;
 
 import java.util.Optional;
@@ -21,8 +21,8 @@ public class MemberController {
     @PostMapping("/join")
     public Success join(@ModelAttribute JoinForm joinForm) {
 
-        Address address = new Address(joinForm.getCity(), joinForm.getCountry(), joinForm.getDistrict());
-        Member member = new Member(joinForm.getName(), joinForm.getNickname(), joinForm.getLoginId(),
+        Address address = new Address(joinForm.getCity(), joinForm.getTown());
+        Member member = Member.createMember(joinForm.getName(), joinForm.getNickname(), joinForm.getPhoneNumber(), joinForm.getLoginId(),
                 joinForm.getLoginPw(), address);
 
         memberRepository.save(member);
@@ -33,12 +33,9 @@ public class MemberController {
     @PostMapping("/join/loginIdDu")
     public Success loginIdDuplicationCheck(@RequestParam String loginId) {
 
+        //TODO 에러 메세지 통일 상수 뽑기 혹은 국제화
         Optional<Member> optionalMember = memberRepository.findByLoginId(loginId);
-        Member findMember = optionalMember.orElse(null);
-
-        if (findMember != null) {
-            throw new DuplicatedException("Duplicated_LoginId");
-        }
+        optionalMember.orElseThrow(() -> new DuplicatedException("Duplicated_LoginId"));
 
         return new Success(true);
     }
@@ -47,11 +44,16 @@ public class MemberController {
     public Success nicknameDuplicationCheck(@RequestParam String nickname) {
 
         Optional<Member> optionalMember = memberRepository.findByNickname(nickname);
-        Member findMember = optionalMember.orElse(null);
+        optionalMember.orElseThrow(() -> new DuplicatedException("Duplicated_Nickname"));
 
-        if (findMember != null) {
-            throw new DuplicatedException("Duplicated_Nickname");
-        }
+        return new Success(true);
+    }
+
+    @PostMapping("/join/phoneNumberDu")
+    public Success phoneNumberDuplicationCheck(@RequestParam String phoneNumber) {
+
+        Optional<Member> optionalMember = memberRepository.findByPhoneNumber(phoneNumber);
+        optionalMember.orElseThrow(() -> new DuplicatedException("Duplicated_PhoneNumber"));
 
         return new Success(true);
     }

@@ -5,11 +5,13 @@ import lombok.Data;
 @Data
 public class ErrorResult {
 
-    String type;
-    String message;
+    private boolean suc;
+    private String code;
+    private String message;
 
-    public ErrorResult(String type, String message) {
-        this.type = type;
+    public ErrorResult(boolean suc ,String code, String message) {
+        this.suc = suc;
+        this.code = code;
         this.message = message;
     }
 }
