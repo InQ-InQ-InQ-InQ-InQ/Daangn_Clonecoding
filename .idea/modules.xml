@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Daangn_Clonecoding.iml" filepath="$PROJECT_DIR$/.idea/modules/Daangn_Clonecoding.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Daangn_Clonecoding.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Daangn_Clonecoding.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Daangn_Clonecoding.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Daangn_Clonecoding.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/carrotmarket_cloneproject.iml" filepath="$PROJECT_DIR$/.idea/modules/carrotmarket_cloneproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carrotmarket_cloneproject.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carrotmarket_cloneproject.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carrotmarket_cloneproject.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carrotmarket_cloneproject.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carrotmarket_cloneproject.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carrotmarket_cloneproject.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/carrotmarket_cloneproject.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/carrotmarket_cloneproject.app.unitTest.iml" />
     </modules>
   </component>
 </project>
