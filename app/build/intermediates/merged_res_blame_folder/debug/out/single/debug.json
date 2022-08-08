@@ -1,102 +1,106 @@
 [
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/drawable-v24_button_back.png.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/drawable-v24/button_back.png"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\layout_fragment_chat.xml.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\layout\\fragment_chat.xml"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/drawable-v24/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/drawable-v24_bell.png.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/drawable-v24/bell.png"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/drawable-v24_qr_scan.png.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/drawable-v24/qr_scan.png"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\drawable-v24_phone_call.png.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\drawable-v24\\phone_call.png"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/xml_backup_rules.xml.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\drawable-v24_bell.png.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\drawable-v24\\bell.png"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\drawable-v24_send.png.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\drawable-v24\\send.png"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\drawable-v24_dots.png.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\drawable-v24\\dots.png"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/drawable-v24_phone_call.png.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/drawable-v24/phone_call.png"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\layout_chat_layout.xml.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\layout\\chat_layout.xml"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/drawable-v24_plus.png.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/drawable-v24/plus.png"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/layout_fragment_chat.xml.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/layout/fragment_chat.xml"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/drawable-v24_dots.png.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/drawable-v24/dots.png"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-anydpi-v26/ic_launcher.xml"
-    },
-    {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/drawable-v24_send.png.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/drawable-v24/send.png"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\drawable-v24_button_back.png.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\drawable-v24\\button_back.png"
     },
     {
         "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/layout_chat_layout.xml.flat",
         "source": "com.example.carrotmarket_cloneproject.app-main-27:/layout/chat_layout.xml"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.carrotmarket_cloneproject.app-merged_res-25:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.carrotmarket_cloneproject.app-main-27:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\drawable-v24_plus.png.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\drawable-v24\\plus.png"
+    },
+    {
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\drawable-v24_qr_scan.png.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\drawable-v24\\qr_scan.png"
+    },
+    {
+        "merged": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-merged_res-25:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\hath8\\.gradle\\daemon\\7.3.3\\com.example.carrotmarket_cloneproject.app-main-27:\\drawable-v24\\ic_launcher_foreground.xml"
     }
 ]

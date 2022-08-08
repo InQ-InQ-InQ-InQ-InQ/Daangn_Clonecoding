@@ -37,7 +37,6 @@ id layout_chat_chatbox
 id layout_group_chat
 id recycler_chat
 id textView_chat_list
-id text_chat_indicator
 id toolbar_gchannel
 id view
 layout chat_layout

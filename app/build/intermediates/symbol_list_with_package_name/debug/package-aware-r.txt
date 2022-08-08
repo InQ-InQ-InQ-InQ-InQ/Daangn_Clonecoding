@@ -2852,7 +2852,6 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView_chat_list
-id text_chat_indicator
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

@@ -2851,7 +2851,6 @@ int id textSpacerNoTitle 0x7f080197
 int id textStart 0x7f080198
 int id textTop 0x7f080199
 int id textView_chat_list 0x7f08019a
-int id text_chat_indicator 0x7f08019b
 int id text_input_end_icon 0x7f08019c
 int id text_input_error_icon 0x7f08019d
 int id text_input_start_icon 0x7f08019e
