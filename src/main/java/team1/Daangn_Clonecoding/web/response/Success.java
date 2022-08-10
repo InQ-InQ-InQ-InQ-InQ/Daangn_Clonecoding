@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Success {
-    public boolean suc;
+    private boolean suc;
 
     public Success(boolean suc) {
         this.suc = suc;
