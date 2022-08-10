@@ -50,7 +50,7 @@ public class Member {
     }
 
     //생성 메서드
-    public static Member createMember(String name, String nickname, String loginId, String phoneNumber, String loginPw, Address address) {
+    public static Member createMember(String name, String nickname, String phoneNumber, String loginId,String loginPw, Address address) {
         return new Member(name, nickname, phoneNumber, loginId, loginPw, address);
     }
 }

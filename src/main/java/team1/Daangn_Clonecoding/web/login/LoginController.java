@@ -21,7 +21,9 @@ public class LoginController {
 
     @PostMapping("/login")
     public Success login(@ModelAttribute LoginForm loginForm, HttpServletRequest request) {
-        Member loginMember = loginService.login(loginForm.getLoginID(), loginForm.getLoginPw());
+
+        //TODO 로그인 실패 - service 에서 exception 으로 처리할지 상의
+        Member loginMember = loginService.login(loginForm.getLoginId(), loginForm.getLoginPw());
 
         if (loginMember == null) {
             return new Success(false);
