@@ -24,4 +24,14 @@ public class SalesLog {
     @ManyToOne
     @JoinColumn(name = "posting_id", unique = true, nullable = false)
     private Posting posting;
+
+    private SalesLog(Member member, Posting posting) {
+        this.member = member;
+        this.posting = posting;
+    }
+
+    //생성 메서드
+    public static SalesLog createSalesLog(Member member, Posting posting) {
+        return new SalesLog(member, posting);
+    }
 }

@@ -24,4 +24,13 @@ public class WishList {
     @ManyToOne
     @JoinColumn(name = "posting_id", nullable = false)
     private Posting posting;
+
+    private WishList(Member member, Posting posting) {
+        this.member = member;
+        this.posting = posting;
+    }
+
+    public static WishList createWishList(Member member, Posting posting) {
+        return new WishList(member, posting);
+    }
 }
