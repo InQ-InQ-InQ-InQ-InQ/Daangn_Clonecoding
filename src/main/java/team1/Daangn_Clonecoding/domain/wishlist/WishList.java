@@ -1,17 +1,17 @@
-package team1.Daangn_Clonecoding.domain.purchaselog;
+package team1.Daangn_Clonecoding.domain.wishlist;
 
-import team1.Daangn_Clonecoding.domain.member.Member;
-import team1.Daangn_Clonecoding.domain.posting.Posting;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import team1.Daangn_Clonecoding.domain.member.Member;
+import team1.Daangn_Clonecoding.domain.posting.Posting;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class PurchaseLog {
+public class WishList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +22,6 @@ public class PurchaseLog {
     private Member member;
 
     @ManyToOne
-    @JoinColumn(name = "posting_id", unique = true, nullable = false)
+    @JoinColumn(name = "posting_id", nullable = false)
     private Posting posting;
 }
