@@ -24,4 +24,14 @@ public class PurchaseLog {
     @ManyToOne
     @JoinColumn(name = "posting_id", unique = true, nullable = false)
     private Posting posting;
+
+    private PurchaseLog(Member member, Posting posting) {
+        this.member = member;
+        this.posting = posting;
+    }
+
+    //생성 메서드
+    public static PurchaseLog createPurchaseLog(Member member, Posting posting) {
+        return new PurchaseLog(member, posting);
+    }
 }

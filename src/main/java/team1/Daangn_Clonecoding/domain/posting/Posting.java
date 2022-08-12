@@ -36,4 +36,19 @@ public class Posting {
 
     @Embedded
     private UploadFile uploadFile;
+
+    private Posting(String title, Category category, String productName, String productPrice, String explains, UploadFile uploadFile) {
+        this.title = title;
+        this.category = category;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.explains = explains;
+        this.uploadFile = uploadFile;
+        this.postingType = PostingType.ING;
+    }
+
+    //생성 메서드
+    public static Posting createPosting(String title, Category category, String productName, String productPrice, String explains, UploadFile uploadFile) {
+        return new Posting(title, category, productName, productPrice, explains, uploadFile);
+    }
 }
