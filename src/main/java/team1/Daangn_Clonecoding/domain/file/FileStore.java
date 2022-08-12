@@ -1,5 +1,6 @@
 package team1.Daangn_Clonecoding.domain.file;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,16 +12,17 @@ import java.util.List;
 import java.util.UUID;
 
 @Component
+@Slf4j
 public class FileStore {
 
-    @Value("file.dir")
+    @Value("${file.dir}")
     private String fileDir;
 
     public String getFullPath(String filename) {
         return fileDir + filename;
     }
 
-    //TODO IOException ExeceptionHandler 로 잡기
+    //TODO IOException ExceptionHandler 로 잡기
     public UploadFile storeFile(MultipartFile multipartFile) throws IOException {
         if (!multipartFile.isEmpty()) {
             String originalFilename = multipartFile.getOriginalFilename();
@@ -34,6 +36,7 @@ public class FileStore {
     }
 
     public List<UploadFile> storeFiles(List<MultipartFile> multipartFiles) throws IOException {
+        if (multipartFiles == null) return new ArrayList<>();
         List<UploadFile> resultList = new ArrayList<>();
         for (MultipartFile multipartFile : multipartFiles) {
             UploadFile uploadFile = storeFile(multipartFile);
