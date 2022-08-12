@@ -64,7 +64,6 @@ public class Posting {
     }
 
     //편의 메서드
-    //나중에 단순히 posting 의 save 없이 컬렉션에 add 만으로도 UploadFileEntity 가 save 가 되는지 테스트
     public void addUploadFile(UploadFile uploadFile) {
         UploadFileEntity uploadFileEntity = new UploadFileEntity(this, uploadFile);
         uploadFileEntities.add(uploadFileEntity);
