@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
+import team1.Daangn_Clonecoding.web.exception.FileEmptyException;
+import team1.Daangn_Clonecoding.web.exception.FileTransferException;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,21 +24,24 @@ public class FileStore {
         return fileDir + filename;
     }
 
-    //TODO IOException ExceptionHandler 로 잡기
-    public UploadFile storeFile(MultipartFile multipartFile) throws IOException {
+    public UploadFile storeFile(MultipartFile multipartFile) {
         if (!multipartFile.isEmpty()) {
             String originalFilename = multipartFile.getOriginalFilename();
             String storeFilename = createStoreFilename(originalFilename);
             String fullPath = getFullPath(storeFilename);
 
-            multipartFile.transferTo(new File(fullPath));
+            try {
+                multipartFile.transferTo(new File(fullPath));
+            } catch (IOException e) {
+                throw new FileTransferException("파일 저장 오류");
+            }
 
             return new UploadFile(originalFilename, storeFilename);
-        } else return null; //TODO Exception 정의하고 ExceptionHandler 로 처리하기
+        } else throw new FileEmptyException("빈 파일 입니다.");
     }
 
     public List<UploadFile> storeFiles(List<MultipartFile> multipartFiles) throws IOException {
-        if (multipartFiles == null) return new ArrayList<>();
+        if (multipartFiles == null) return new ArrayList<>(); // 사진을 저장하지 않는경우 null 방지
         List<UploadFile> resultList = new ArrayList<>();
         for (MultipartFile multipartFile : multipartFiles) {
             UploadFile uploadFile = storeFile(multipartFile);
