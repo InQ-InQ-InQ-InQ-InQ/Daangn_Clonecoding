@@ -30,6 +30,7 @@ public class FileStore {
             String storeFilename = createStoreFilename(originalFilename);
             String fullPath = getFullPath(storeFilename);
 
+            //IOException 잡아서 사용자 정의 Exception 으로 변경
             try {
                 multipartFile.transferTo(new File(fullPath));
             } catch (IOException e) {
@@ -40,7 +41,7 @@ public class FileStore {
         } else throw new FileEmptyException("빈 파일 입니다.");
     }
 
-    public List<UploadFile> storeFiles(List<MultipartFile> multipartFiles) throws IOException {
+    public List<UploadFile> storeFiles(List<MultipartFile> multipartFiles) {
         if (multipartFiles == null) return new ArrayList<>(); // 사진을 저장하지 않는경우 null 방지
         List<UploadFile> resultList = new ArrayList<>();
         for (MultipartFile multipartFile : multipartFiles) {

@@ -13,7 +13,7 @@ public class MemberExHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(DuplicatedException.class)
     public ErrorResult duplicatedHandler(DuplicatedException e) {
-        return new ErrorResult(false ,e.getMessage(), "중복입니다.");
+        return new ErrorResult(false , "BAD_REQUEST", e.getMessage());
     }
 
 }
