@@ -16,4 +16,7 @@ public class MemberExHandler {
         return new ErrorResult(false ,e.getMessage(), "중복입니다.");
     }
 
+
+
+
 }
