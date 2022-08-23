@@ -16,4 +16,7 @@ public class MemberExHandler {
         return new ErrorResult(false , "BAD_REQUEST", e.getMessage());
     }
 
+
+
+
 }
