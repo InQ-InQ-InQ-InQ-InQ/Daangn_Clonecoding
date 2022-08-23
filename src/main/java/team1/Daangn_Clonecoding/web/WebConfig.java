@@ -1,9 +1,11 @@
 package team1.Daangn_Clonecoding.web;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import team1.Daangn_Clonecoding.web.interceptor.LoginCheckInterceptor;
 
+@Configuration
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
