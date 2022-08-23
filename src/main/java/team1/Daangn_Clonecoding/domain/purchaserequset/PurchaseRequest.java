@@ -25,14 +25,17 @@ public class PurchaseRequest {
     @JoinColumn(name = "posting_id", nullable = false)
     private Posting posting;
 
+    private String message;
+
     //편의 메서드
-    private PurchaseRequest(Member member, Posting posting) {
+    private PurchaseRequest(Member member, Posting posting, String message) {
         this.member = member;
         this.posting = posting;
+        this.message = message;
     }
 
     //생성 메서드
-    public static PurchaseRequest createPurchaseRequest(Member member, Posting posting) {
-        return new PurchaseRequest(member, posting);
+    public static PurchaseRequest createPurchaseRequest(Member member, Posting posting, String message) {
+        return new PurchaseRequest(member, posting, message);
     }
 }

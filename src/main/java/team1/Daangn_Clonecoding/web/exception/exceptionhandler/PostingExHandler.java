@@ -1,4 +1,4 @@
-package team1.Daangn_Clonecoding.web.posting;
+package team1.Daangn_Clonecoding.web.exception.exceptionhandler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -22,11 +22,5 @@ public class PostingExHandler {
     @ExceptionHandler(FileTransferException.class)
     public ErrorResult fileEmptyHandler(FileTransferException e) {
         return new ErrorResult(false, "INTERNAL_SERVER_ERROR", e.getMessage());
-    }
-
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(NotExistPkException.class)
-    public ErrorResult fileEmptyHandler(NotExistPkException e) {
-        return new ErrorResult(false, "BAD_REQUEST", e.getMessage());
     }
 }

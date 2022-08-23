@@ -24,7 +24,7 @@ public class PostingController {
 
     @PostMapping("/new")
     public Success newPosting(@ModelAttribute PostingForm form,
-                              @SessionAttribute(value = SessionConst.LOGIN_MEMBER, required = false) Long memberId) {
+                              @SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId) {
 
         //파일 저장
         List<UploadFile> uploadFiles = fileStore.storeFiles(form.getMultipartFiles());
