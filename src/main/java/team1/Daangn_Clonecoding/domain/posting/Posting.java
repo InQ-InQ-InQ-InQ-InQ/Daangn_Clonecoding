@@ -19,6 +19,8 @@ public class Posting {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Long adminId;
+
     @Column(nullable = false)
     private String title;
 
@@ -42,7 +44,8 @@ public class Posting {
     @OneToMany(mappedBy = "posting", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UploadFileEntity> uploadFileEntities = new ArrayList<>();
 
-    private Posting(String title, Category category, String productName, Integer productPrice, String explains) {
+    private Posting(Long adminId, String title, Category category, String productName, Integer productPrice, String explains) {
+        this.adminId = adminId;
         this.title = title;
         this.category = category;
         this.productName = productName;
@@ -52,9 +55,9 @@ public class Posting {
     }
 
     //생성 메서드
-    public static Posting createPosting(String title, Category category, String productName, Integer productPrice, String explains, List<UploadFile> uploadFiles) {
+    public static Posting createPosting(Long adminId, String title, Category category, String productName, Integer productPrice, String explains, List<UploadFile> uploadFiles) {
 
-        Posting posting = new Posting(title, category, productName, productPrice, explains);
+        Posting posting = new Posting(adminId, title, category, productName, productPrice, explains);
         if (uploadFiles != null) {
             for (UploadFile uploadFile : uploadFiles) {
                 posting.addUploadFile(uploadFile);
