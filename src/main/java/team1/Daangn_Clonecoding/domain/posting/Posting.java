@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import team1.Daangn_Clonecoding.domain.auditing.BaseEntity;
 import team1.Daangn_Clonecoding.domain.file.UploadFile;
 import team1.Daangn_Clonecoding.domain.member.Address;
 
@@ -15,7 +16,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Slf4j
-public class Posting {
+public class Posting extends BaseEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
