@@ -15,8 +15,6 @@ public class PostingForm {
 
     private Category category;
 
-    private String productName;
-
     private Integer productPrice;
 
     private String explains;
