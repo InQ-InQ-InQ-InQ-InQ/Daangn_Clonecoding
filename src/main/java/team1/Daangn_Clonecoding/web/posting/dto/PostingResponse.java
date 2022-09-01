@@ -12,10 +12,13 @@ public class PostingResponse {
 
     private String storeFilename;
 
+    private Integer productPrice;
+
     public PostingResponse(Posting posting) {
         String storeFilename = posting.getUploadFileEntities().get(0).getUploadFile().getStoreFilename(); //첫번 째 사진의 storeFilename
         this.postingId = posting.getId();
         this.title = posting.getTitle();
         this.storeFilename = storeFilename;
+        this.productPrice = posting.getProductPrice();
     }
 }
