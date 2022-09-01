@@ -1,6 +1,7 @@
 package team1.Daangn_Clonecoding.web.posting.dto;
 
 import lombok.Data;
+import team1.Daangn_Clonecoding.domain.member.Member;
 import team1.Daangn_Clonecoding.domain.posting.Category;
 import team1.Daangn_Clonecoding.domain.posting.Posting;
 import team1.Daangn_Clonecoding.domain.posting.PostingType;
@@ -25,9 +26,13 @@ public class PostingDetailResponse {
 
     private String city;
 
-    List<String> storeFilenames;
+    private List<String> storeFilenames;
 
-    public PostingDetailResponse(Posting posting, Long memberId) {
+    private String nickname;
+
+    private Double mTemp;
+
+    public PostingDetailResponse(Posting posting, Long memberId, Member seller) {
         this.isAdmin = (posting.getAdminId().equals(memberId)); //현 사용자가 게시물 주인인지 확인
         this.title = posting.getTitle();
         this.postingType = posting.getPostingType();
@@ -38,5 +43,7 @@ public class PostingDetailResponse {
         this.storeFilenames = posting.getUploadFileEntities().stream()
                 .map((address) -> address.getUploadFile().getStoreFilename())
                 .collect(Collectors.toList()); //storeFilename 으로 변환
+        this.nickname = seller.getNickname();
+        this.mTemp = seller.getMTemp();
     }
 }
