@@ -12,6 +12,7 @@ import team1.Daangn_Clonecoding.domain.posting.Posting;
 import team1.Daangn_Clonecoding.domain.posting.postingrepository.PostingRepository;
 import team1.Daangn_Clonecoding.web.SessionConst;
 import team1.Daangn_Clonecoding.web.exception.NotExistPkException;
+import team1.Daangn_Clonecoding.web.posting.dto.PostingDetailResponse;
 import team1.Daangn_Clonecoding.web.posting.dto.PostingForm;
 import team1.Daangn_Clonecoding.web.posting.dto.PostingResponse;
 import team1.Daangn_Clonecoding.web.response.Success;
@@ -60,5 +61,16 @@ public class PostingController {
 
         //Dto 로 변환후 반환
         return paging.map(PostingResponse::new);
+    }
+
+    @GetMapping("{id}")
+    public PostingDetailResponse findPostingDetail(@PathVariable Long id,
+                                                   @SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId) {
+
+        //posting 조회
+        Posting posting = postingRepository.findById(id).orElseThrow(() -> new NotExistPkException("존재하지 않는 pk 입니다."));
+
+        //Dto 로 변환 후 반환
+        return new PostingDetailResponse(posting, memberId);
     }
 }
