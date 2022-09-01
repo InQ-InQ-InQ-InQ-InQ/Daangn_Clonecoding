@@ -20,7 +20,11 @@ public class PostingResponse {
     private Double mTemp;
 
     public PostingResponse(Posting posting, Member member) {
-        String storeFilename = posting.getUploadFileEntities().get(0).getUploadFile().getStoreFilename(); //첫번 째 사진의 storeFilename
+        if (posting.getUploadFileEntities().isEmpty()) {
+            this.storeFilename = null;
+        } else {
+            this.storeFilename = posting.getUploadFileEntities().get(0).getUploadFile().getStoreFilename(); //첫번 째 사진의 storeFilename
+        }
         this.postingId = posting.getId();
         this.title = posting.getTitle();
         this.storeFilename = storeFilename;

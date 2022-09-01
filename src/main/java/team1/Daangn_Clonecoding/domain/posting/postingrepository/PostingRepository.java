@@ -9,5 +9,6 @@ import java.util.List;
 
 public interface PostingRepository extends JpaRepository<Posting, Long> {
 
-    Slice<Posting> findDistinctByCity(String city, Pageable pageable);
+    //페이징을 위해 uploadFileEntities fetch join 사용 X
+    Slice<Posting> findByCity(String city, Pageable pageable);
 }

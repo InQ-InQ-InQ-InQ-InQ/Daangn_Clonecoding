@@ -58,14 +58,16 @@ public class PostingController {
         String city = admin.getAddress().getCity();
 
         //페이징하여 데이터 조회
-        Slice<Posting> paging = postingRepository.findDistinctByCity(city, pageable);
+        Slice<Posting> paging = postingRepository.findByCity(city, pageable);
 
         //조회한 Posting 들에서 AdminId 추출
         List<Long> adminIds = paging.getContent().stream()
                 .map(Posting::getAdminId).collect(Collectors.toList());
 
         //AdminId 로 member 조회 --> 나중에 PostingResponse 로 변환할 때 각각 쿼리를 칠때 쿼리를 통합하기 위한 쿼리
-        memberRepository.findMembersByAdminIds(adminIds);
+        if (!adminIds.isEmpty()) {
+            memberRepository.findMembersByAdminIds(adminIds);
+        }
 
         //Dto 로 변환후 반환
         return paging.map(posting -> {
