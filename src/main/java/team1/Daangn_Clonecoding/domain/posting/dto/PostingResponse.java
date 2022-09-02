@@ -1,4 +1,4 @@
-package team1.Daangn_Clonecoding.web.posting.dto;
+package team1.Daangn_Clonecoding.domain.posting.dto;
 
 import lombok.Data;
 import team1.Daangn_Clonecoding.domain.member.Member;
@@ -27,7 +27,6 @@ public class PostingResponse {
         }
         this.postingId = posting.getId();
         this.title = posting.getTitle();
-        this.storeFilename = storeFilename;
         this.productPrice = posting.getProductPrice();
         this.nickname = member.getNickname();
         this.mTemp = member.getMTemp();

@@ -1,4 +1,4 @@
-package team1.Daangn_Clonecoding.web.posting.dto;
+package team1.Daangn_Clonecoding.domain.posting.dto;
 
 import lombok.Data;
 import team1.Daangn_Clonecoding.domain.member.Member;
