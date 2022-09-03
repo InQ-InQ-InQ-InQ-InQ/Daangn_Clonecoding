@@ -21,8 +21,6 @@ import team1.Daangn_Clonecoding.web.response.Success;
 @RequestMapping("/posting")
 public class PostingController {
 
-    private final PostingRepository postingRepository;
-    private final MemberRepository memberRepository;
     private final PostingService postingService;
 
     @PostMapping("/new")
