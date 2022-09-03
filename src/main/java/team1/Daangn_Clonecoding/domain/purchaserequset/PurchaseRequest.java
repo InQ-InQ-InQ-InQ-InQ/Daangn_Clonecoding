@@ -18,19 +18,19 @@ public class PurchaseRequest extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "member_id", nullable = false)
-    private Member member;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "buyer_id", nullable = false)
+    private Member buyer;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "posting_id", nullable = false)
     private Posting posting;
 
     private String message;
 
     //편의 메서드
-    private PurchaseRequest(Member member, Posting posting, String message) {
-        this.member = member;
+    private PurchaseRequest(Member buyer, Posting posting, String message) {
+        this.buyer = buyer;
         this.posting = posting;
         this.message = message;
     }

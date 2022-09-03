@@ -19,7 +19,10 @@ public class PostingResponse {
 
     private Double mTemp;
 
-    public PostingResponse(Posting posting, Member member) {
+    public PostingResponse(Posting posting) {
+
+        Member seller = posting.getSeller();
+
         if (posting.getUploadFileEntities().isEmpty()) {
             this.storeFilename = null;
         } else {
@@ -28,7 +31,7 @@ public class PostingResponse {
         this.postingId = posting.getId();
         this.title = posting.getTitle();
         this.productPrice = posting.getProductPrice();
-        this.nickname = member.getNickname();
-        this.mTemp = member.getMTemp();
+        this.nickname = seller.getNickname();
+        this.mTemp = seller.getMTemp();
     }
 }
