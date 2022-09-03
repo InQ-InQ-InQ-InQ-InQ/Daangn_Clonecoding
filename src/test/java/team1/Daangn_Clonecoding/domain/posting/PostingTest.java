@@ -28,8 +28,8 @@ class PostingTest {
     void uploadFileEntityTest() {
         UploadFile uploadFile = new UploadFile("origin.png", "store.png");
 
-        Posting posting = Posting.createPosting(1L,"title", Category.TEST, 1000, "hello",
-                null, "수원시");
+        Posting posting = Posting.createPosting("title", Category.TEST, 1000, "hello",
+                null, null);
 
         pr.save(posting);
 

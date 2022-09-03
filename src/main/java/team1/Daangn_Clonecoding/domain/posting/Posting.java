@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import team1.Daangn_Clonecoding.domain.auditing.BaseEntity;
 import team1.Daangn_Clonecoding.domain.file.UploadFile;
 import team1.Daangn_Clonecoding.domain.member.Address;
+import team1.Daangn_Clonecoding.domain.member.Member;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,7 +22,13 @@ public class Posting extends BaseEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long adminId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "seller_id", nullable = false)
+    private Member seller;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "buyer_id")
+    private Member buyer;
 
     @Column(nullable = false)
     private String title;
@@ -39,27 +46,14 @@ public class Posting extends BaseEntity {
 
     private String explains;
 
-    @Column(nullable = false)
-    private String city;
-
     //값타입 UploadFileEntity 를 만들어서 해결, cascade + orphanRemoval 사용
     @OneToMany(mappedBy = "posting", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UploadFileEntity> uploadFileEntities = new ArrayList<>();
 
-    private Posting(Long adminId, String title, Category category, Integer productPrice, String explains, String city) {
-        this.adminId = adminId;
-        this.title = title;
-        this.category = category;
-        this.productPrice = productPrice;
-        this.explains = explains;
-        this.postingType = PostingType.ING;
-        this.city = city;
-    }
-
     //생성 메서드
-    public static Posting createPosting(Long adminId, String title, Category category, Integer productPrice, String explains, List<UploadFile> uploadFiles, String city) {
+    public static Posting createPosting(String title, Category category, Integer productPrice, String explains, List<UploadFile> uploadFiles, Member member) {
 
-        Posting posting = new Posting(adminId, title, category, productPrice, explains, city);
+        Posting posting = new Posting(title, category, productPrice, explains, member);
         if (uploadFiles != null) {
             for (UploadFile uploadFile : uploadFiles) {
                 posting.addUploadFile(uploadFile);
@@ -72,5 +66,18 @@ public class Posting extends BaseEntity {
     public void addUploadFile(UploadFile uploadFile) {
         UploadFileEntity uploadFileEntity = new UploadFileEntity(this, uploadFile);
         uploadFileEntities.add(uploadFileEntity);
+    }
+
+    public void addBuyer(Member member) {
+        this.buyer = member;
+    }
+
+    private Posting(String title, Category category, Integer productPrice, String explains, Member member) {
+        this.title = title;
+        this.category = category;
+        this.productPrice = productPrice;
+        this.explains = explains;
+        this.postingType = PostingType.ING;
+        this.seller = member;
     }
 }

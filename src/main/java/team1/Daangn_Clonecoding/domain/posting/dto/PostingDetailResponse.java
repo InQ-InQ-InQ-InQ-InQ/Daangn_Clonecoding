@@ -32,16 +32,18 @@ public class PostingDetailResponse {
 
     private Double mTemp;
 
-    public PostingDetailResponse(Posting posting, Long memberId, Member seller) {
-        this.isAdmin = (posting.getAdminId().equals(memberId)); //현 사용자가 게시물 주인인지 확인
+    public PostingDetailResponse(Posting posting, Long memberId) {
+        Member seller = posting.getSeller();
+
+        this.isAdmin = (seller.getId().equals(memberId)); //현 사용자가 게시물 주인인지 확인
         this.title = posting.getTitle();
         this.postingType = posting.getPostingType();
         this.category = posting.getCategory();
         this.productPrice = posting.getProductPrice();
         this.explains = posting.getExplains();
-        this.city = posting.getCity();
+        this.city = seller.getAddress().getCity();
         this.storeFilenames = posting.getUploadFileEntities().stream()
-                .map((address) -> address.getUploadFile().getStoreFilename())
+                .map((uploadFileEntity) -> uploadFileEntity.getUploadFile().getStoreFilename())
                 .collect(Collectors.toList()); //storeFilename 으로 변환
         this.nickname = seller.getNickname();
         this.mTemp = seller.getMTemp();
