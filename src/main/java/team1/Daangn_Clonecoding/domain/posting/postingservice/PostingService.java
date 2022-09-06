@@ -14,10 +14,10 @@ import team1.Daangn_Clonecoding.domain.posting.dto.PostingDetailResponse;
 import team1.Daangn_Clonecoding.domain.posting.dto.PostingForm;
 import team1.Daangn_Clonecoding.domain.posting.dto.PostingResponse;
 import team1.Daangn_Clonecoding.domain.posting.postingrepository.PostingRepository;
+import team1.Daangn_Clonecoding.web.exception.AlreadyExistBuyerException;
 import team1.Daangn_Clonecoding.web.exception.NotExistPkException;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -61,15 +61,33 @@ public class PostingService {
     public PostingDetailResponse findDetailPosting(Long postingId, Long memberId) {
 
         //posting 조회
-        Posting posting = findPostingById(postingId);
+        Posting posting = findPostingWithSellerById(postingId);
 
         //Dto 로 변환 후 반환
         return new PostingDetailResponse(posting, memberId);
     }
 
-    //id로 posting 조회
-    private Posting findPostingById(Long id) {
-        return postingRepository.findById(id).orElseThrow(() -> new NotExistPkException("존재하지 않는 pk 입니다."));
+    @Transactional
+    public void buy(Long memberId, Long postingId) {
+
+        Member member = findMemberById(memberId);
+        Posting posting = findPostingWithBuyerById(postingId);
+
+        if (posting.getBuyer() != null) {
+            throw new AlreadyExistBuyerException("구매자가 이미 존재하는 게시물 입니다.");
+        }
+
+        posting.addBuyer(member);
+    }
+
+    //id로 posting 조회  (seller 패치조인)
+    private Posting findPostingWithSellerById(Long id) {
+        return postingRepository.findWithSellerById(id).orElseThrow(() -> new NotExistPkException("존재하지 않는 pk 입니다."));
+    }
+
+    //id로 posting 조회 (buyer 패치조인)
+    private Posting findPostingWithBuyerById(Long id) {
+        return postingRepository.findWithBuyerById(id).orElseThrow(() -> new NotExistPkException("존재하지 않는 pk 입니다."));
     }
 
     //id로 member 조회
