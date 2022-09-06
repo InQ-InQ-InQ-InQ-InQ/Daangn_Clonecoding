@@ -14,13 +14,18 @@ import team1.Daangn_Clonecoding.web.exception.NotExistPkException;
 import team1.Daangn_Clonecoding.domain.posting.dto.PostingDetailResponse;
 import team1.Daangn_Clonecoding.domain.posting.dto.PostingForm;
 import team1.Daangn_Clonecoding.domain.posting.dto.PostingResponse;
+import team1.Daangn_Clonecoding.web.response.BasicResponse;
 import team1.Daangn_Clonecoding.web.response.Success;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/posting")
 public class PostingController {
 
+    private final PostingRepository postingRepository;
     private final PostingService postingService;
 
     @PostMapping("/new")
@@ -46,4 +51,20 @@ public class PostingController {
 
         return postingService.findDetailPosting(postingId, memberId);
     }
+
+    @GetMapping("/purchase_log") //판매목록 조회
+    public BasicResponse<List<PostingResponse>> findPurchaseLogs(@SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId) {
+
+        List<Posting> postings = postingRepository.findByBuyer(memberId);
+
+        List<PostingResponse> result = postings.stream().map((PostingResponse::new))
+                .collect(Collectors.toList());
+
+        return new BasicResponse<>(result);
+    }
+
+
+
+
+
 }

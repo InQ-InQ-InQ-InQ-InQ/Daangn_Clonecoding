@@ -20,4 +20,8 @@ public interface PostingRepository extends JpaRepository<Posting, Long> {
     @Override
     @EntityGraph(attributePaths = "seller")
     Optional<Posting> findById(Long aLong);
+
+    @EntityGraph(attributePaths = {"buyer", "seller"})
+    @Query("select p from Posting p where p.buyer.id = :memberId")
+    List<Posting> findByBuyer(Long memberId);
 }
