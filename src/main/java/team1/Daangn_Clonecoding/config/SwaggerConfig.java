@@ -2,6 +2,7 @@ package team1.Daangn_Clonecoding.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -17,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.OAS_30)
                 .useDefaultResponseMessages(false)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("team1.Daangn_clonecoding.web"))
+                .apis(RequestHandlerSelectors.basePackage("team1.Daangn_Clonecoding.web"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
