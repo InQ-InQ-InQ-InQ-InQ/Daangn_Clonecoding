@@ -49,7 +49,7 @@ public class PostingController {
         return postingService.findDetailPosting(postingId, memberId);
     }
 
-    @PutMapping("/buy")
+    @PutMapping("/buy") //게시물 상태 구매완료로 변경
     public Success buy(@SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId,
                        @RequestParam Long postingId) {
 
@@ -69,7 +69,7 @@ public class PostingController {
         return new BasicResponse<>(result);
     }
 
-    @GetMapping("/sale_log")
+    @GetMapping("/sale_log") //구매목록 조회
     public BasicResponse<List<PostingResponse>> findSaleLogs(@SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId) {
 
         List<Posting> postings = postingRepository.findBySeller(memberId);

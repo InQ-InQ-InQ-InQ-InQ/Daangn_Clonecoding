@@ -10,6 +10,7 @@ import team1.Daangn_Clonecoding.domain.file.UploadFile;
 import team1.Daangn_Clonecoding.domain.member.Member;
 import team1.Daangn_Clonecoding.domain.member.memberrepository.MemberRepository;
 import team1.Daangn_Clonecoding.domain.posting.Posting;
+import team1.Daangn_Clonecoding.domain.posting.PostingType;
 import team1.Daangn_Clonecoding.domain.posting.dto.PostingDetailResponse;
 import team1.Daangn_Clonecoding.domain.posting.dto.PostingForm;
 import team1.Daangn_Clonecoding.domain.posting.dto.PostingResponse;
@@ -67,7 +68,7 @@ public class PostingService {
         return new PostingDetailResponse(posting, memberId);
     }
 
-    @Transactional
+    @Transactional //buy, 구매완료 변경 시 PostingType 변경과 Buyer 설정
     public void buy(Long memberId, Long postingId) {
 
         Member member = findMemberById(memberId);
@@ -78,6 +79,7 @@ public class PostingService {
         }
 
         posting.addBuyer(member);
+        posting.changePostingType(PostingType.FIN);
     }
 
     //id로 posting 조회  (seller 패치조인)
