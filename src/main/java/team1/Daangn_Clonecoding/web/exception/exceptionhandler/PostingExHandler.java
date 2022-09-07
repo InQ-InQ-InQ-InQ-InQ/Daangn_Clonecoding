@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import team1.Daangn_Clonecoding.web.exception.AlreadyExistBuyerException;
 import team1.Daangn_Clonecoding.web.exception.FileEmptyException;
 import team1.Daangn_Clonecoding.web.exception.FileTransferException;
 import team1.Daangn_Clonecoding.web.exception.NotExistPkException;
@@ -20,7 +21,13 @@ public class PostingExHandler {
 
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(FileTransferException.class)
-    public ErrorResult fileEmptyHandler(FileTransferException e) {
+    public ErrorResult transferErrorHandler(FileTransferException e) {
         return new ErrorResult(false, "INTERNAL_SERVER_ERROR", e.getMessage());
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(AlreadyExistBuyerException.class)
+    public ErrorResult alreadyExistBuyerHandler(AlreadyExistBuyerException e) {
+        return new ErrorResult(false, "BAD_REQUEST", e.getMessage());
     }
 }

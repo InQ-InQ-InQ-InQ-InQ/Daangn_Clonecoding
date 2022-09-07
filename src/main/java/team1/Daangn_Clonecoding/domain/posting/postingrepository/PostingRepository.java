@@ -12,12 +12,23 @@ import java.util.Optional;
 
 public interface PostingRepository extends JpaRepository<Posting, Long> {
 
-    //페이징을 위해 uploadFileEntities fetch join 사용 X
+    //페이징을 위해 uploadFileEntities 패치조인 사용 X
     @Query("select p from Posting p join fetch p.seller m where m.address.city = :city")
     Slice<Posting> findByCity(String city, Pageable pageable);
 
-    //기본 findById 자동 join fetch p.seller
-    @Override
+    //seller 패치조인 findById
     @EntityGraph(attributePaths = "seller")
-    Optional<Posting> findById(Long aLong);
+    Optional<Posting> findWithSellerById(Long aLong);
+
+    //buyer 패치조인 findById
+    @EntityGraph(attributePaths = "seller")
+    Optional<Posting> findWithBuyerById(Long aLong);
+
+    @EntityGraph(attributePaths = {"buyer", "seller"})
+    @Query("select p from Posting p where p.buyer.id = :memberId")
+    List<Posting> findByBuyer(Long memberId);
+
+    @EntityGraph(attributePaths = "seller")
+    @Query("select p from Posting p where p.seller.id = :memberId")
+    List<Posting> findBySeller(Long memberId);
 }

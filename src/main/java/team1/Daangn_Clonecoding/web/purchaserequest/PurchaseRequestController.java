@@ -27,7 +27,7 @@ public class PurchaseRequestController {
                                       @SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId) {
 
         Member member = memberRepository.findById(memberId).orElseThrow(() -> new NotExistPkException("존재하지 않는 pk 입니다."));
-        Posting posting = postingRepository.findById(form.getPostingId()).orElseThrow(() -> new NotExistPkException("존재하지 않는 pk 입니다."));
+        Posting posting = postingRepository.findWithSellerById(form.getPostingId()).orElseThrow(() -> new NotExistPkException("존재하지 않는 pk 입니다."));
 
         PurchaseRequest purchaseRequest = PurchaseRequest.createPurchaseRequest(member, posting, form.getMessage());
 

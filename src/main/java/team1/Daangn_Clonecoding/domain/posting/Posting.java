@@ -72,6 +72,10 @@ public class Posting extends BaseEntity {
         this.buyer = member;
     }
 
+    public void changePostingType(PostingType postingType) {
+        this.postingType = postingType;
+    }
+
     private Posting(String title, Category category, Integer productPrice, String explains, Member member) {
         this.title = title;
         this.category = category;
