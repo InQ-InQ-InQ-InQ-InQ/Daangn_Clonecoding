@@ -30,7 +30,7 @@ public class PostingService {
     private final MemberRepository memberRepository;
 
     @Transactional // newPosting
-    public void newPosting(PostingForm form, Long memberId) {
+    public Long newPosting(PostingForm form, Long memberId) {
         //파일 저장
         List<UploadFile> uploadFiles = fileStore.storeFiles(form.getMultipartFiles());
 
@@ -43,6 +43,8 @@ public class PostingService {
 
         //게시물 저장
         postingRepository.save(posting);
+
+        return posting.getId();
     }
 
     // findPostingByPaging
