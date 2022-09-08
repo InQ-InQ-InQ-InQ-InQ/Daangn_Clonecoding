@@ -1,4 +1,4 @@
-package team1.Daangn_Clonecoding.web.login;
+package team1.Daangn_Clonecoding.web.exception.exceptionhandler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
