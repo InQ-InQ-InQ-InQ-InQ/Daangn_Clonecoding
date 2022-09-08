@@ -1,5 +1,7 @@
 package team1.Daangn_Clonecoding.web.purchaserequest;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import team1.Daangn_Clonecoding.domain.member.Member;
@@ -23,8 +25,10 @@ public class PurchaseRequestController {
     private final PostingRepository postingRepository;
 
     @PostMapping("/new")
-    public Success newPurchaseRequest(@ModelAttribute PrForm form,
-                                      @SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId) {
+    @Operation(summary = "구매요청 생성", description = "게시물 ID와 메세지를 입력받아 구매요청을 생성한다.")
+    public Success newPurchaseRequest(@Parameter(description = "세션에서 가져오는 데이터로 값 입력 X")
+                                          @SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId,
+                                      @ModelAttribute PrForm form) {
 
         Member member = memberRepository.findById(memberId).orElseThrow(() -> new NotExistPkException("존재하지 않는 pk 입니다."));
         Posting posting = postingRepository.findWithSellerById(form.getPostingId()).orElseThrow(() -> new NotExistPkException("존재하지 않는 pk 입니다."));
