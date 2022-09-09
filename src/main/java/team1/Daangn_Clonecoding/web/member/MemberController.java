@@ -22,7 +22,7 @@ public class MemberController {
 
     private final MemberRepository memberRepository;
 
-    @PostMapping("/join")
+    @PostMapping
     @Operation(summary = "회원가입", description = "회원정보를 받아 회원가입을 한다.")
     public ResponseEntity<SimpleMemberSuccessResponse> join(@ModelAttribute MemberRequest memberRequest) {
 
@@ -38,7 +38,7 @@ public class MemberController {
         return new ResponseEntity<>(new SimpleMemberSuccessResponse(member.getId()), headers, HttpStatus.CREATED);
     }
 
-    @PostMapping("/join/loginIdDu")
+    @GetMapping("/validation/loginId")
     @Operation(summary = "아이디 중복 검사", description = "로그인 아이디를 받아서 중복검사를 한다.")
     public ResponseEntity<Void> loginIdDuplicationCheck(@RequestParam String loginId) {
 
@@ -49,7 +49,7 @@ public class MemberController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PostMapping("/join/nicknameDu")
+    @GetMapping("/validation/nickname")
     @Operation(summary = "닉네임 중복 검사", description = "닉네임을 받아서 중복검사를 한다.")
     public ResponseEntity<Void> nicknameDuplicationCheck(@RequestParam String nickname) {
 
@@ -59,7 +59,7 @@ public class MemberController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    @PostMapping("/join/phoneNumberDu")
+    @GetMapping("/validation/phoneNumber")
     @Operation(summary = "전화번호 중복 검사", description = "전화번호를 받아서 중복검사를 한다.")
     public ResponseEntity<Void> phoneNumberDuplicationCheck(@RequestParam String phoneNumber) {
 

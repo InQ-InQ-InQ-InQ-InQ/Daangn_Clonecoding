@@ -27,7 +27,7 @@ public class PurchaseRequestController {
 
     private final PurchaseRequestService prService;
 
-    @PostMapping("/new")
+    @PostMapping
     @Operation(summary = "구매요청 생성", description = "게시물 ID와 메세지를 입력받아 구매요청을 생성한다.")
     public ResponseEntity<SimplePrResponse> newPurchaseRequest(@Parameter(description = "세션에서 가져오는 데이터로 값 입력 X")
                                                                    @SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId,
