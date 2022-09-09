@@ -11,9 +11,7 @@ import team1.Daangn_Clonecoding.domain.member.Member;
 import team1.Daangn_Clonecoding.domain.member.memberrepository.MemberRepository;
 import team1.Daangn_Clonecoding.domain.posting.Posting;
 import team1.Daangn_Clonecoding.domain.posting.PostingType;
-import team1.Daangn_Clonecoding.domain.posting.dto.PostingDetailResponse;
 import team1.Daangn_Clonecoding.domain.posting.dto.PostingForm;
-import team1.Daangn_Clonecoding.domain.posting.dto.PostingResponse;
 import team1.Daangn_Clonecoding.domain.posting.postingrepository.PostingRepository;
 import team1.Daangn_Clonecoding.web.exception.AlreadyExistBuyerException;
 import team1.Daangn_Clonecoding.web.exception.NotExistPkException;
@@ -48,7 +46,7 @@ public class PostingService {
     }
 
     // findPostingByPaging
-    public Slice<PostingResponse> findPagingPosting(Long memberId, Pageable pageable) {
+    public Slice<Posting> findPagingPosting(Long memberId, Pageable pageable) {
 
         //city 추출
         Member seller = findMemberById(memberId);
@@ -57,17 +55,23 @@ public class PostingService {
         //페이징하여 데이터 조회
         Slice<Posting> paging = postingRepository.findByCity(city, pageable);
 
-        return paging.map(PostingResponse::new);
+        // 한 트렌젝션에서 해결하기 위해 강제 호출
+        paging.getContent().get(0).getUploadFileEntities();
+
+        return paging;
     }
 
     // findPostingDetail
-    public PostingDetailResponse findDetailPosting(Long postingId, Long memberId) {
+    public Posting findDetailPosting(Long postingId) {
 
         //posting 조회
         Posting posting = findPostingWithSellerById(postingId);
 
+        // 한 트렌젝션에서 해결하기 위해 강제 호출
+        posting.getUploadFileEntities();
+
         //Dto 로 변환 후 반환
-        return new PostingDetailResponse(posting, memberId);
+        return posting;
     }
 
     @Transactional //buy, 구매완료 변경 시 PostingType 변경과 Buyer 설정
