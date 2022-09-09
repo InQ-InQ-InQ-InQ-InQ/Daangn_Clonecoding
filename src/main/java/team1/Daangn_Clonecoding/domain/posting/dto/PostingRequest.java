@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class PostingForm {
+public class PostingRequest {
 
     private String title;
 

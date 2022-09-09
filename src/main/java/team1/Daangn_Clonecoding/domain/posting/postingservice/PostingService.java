@@ -11,7 +11,7 @@ import team1.Daangn_Clonecoding.domain.member.Member;
 import team1.Daangn_Clonecoding.domain.member.memberrepository.MemberRepository;
 import team1.Daangn_Clonecoding.domain.posting.Posting;
 import team1.Daangn_Clonecoding.domain.posting.PostingType;
-import team1.Daangn_Clonecoding.domain.posting.dto.PostingForm;
+import team1.Daangn_Clonecoding.domain.posting.dto.PostingRequest;
 import team1.Daangn_Clonecoding.domain.posting.postingrepository.PostingRepository;
 import team1.Daangn_Clonecoding.web.exception.AlreadyExistBuyerException;
 import team1.Daangn_Clonecoding.web.exception.NotExistPkException;
@@ -28,7 +28,7 @@ public class PostingService {
     private final MemberRepository memberRepository;
 
     @Transactional // newPosting
-    public Long newPosting(PostingForm form, Long memberId) {
+    public Long newPosting(PostingRequest form, Long memberId) {
         //파일 저장
         List<UploadFile> uploadFiles = fileStore.storeFiles(form.getMultipartFiles());
 

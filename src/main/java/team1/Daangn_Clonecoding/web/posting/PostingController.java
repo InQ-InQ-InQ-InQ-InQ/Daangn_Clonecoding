@@ -14,7 +14,7 @@ import team1.Daangn_Clonecoding.domain.posting.postingrepository.PostingReposito
 import team1.Daangn_Clonecoding.domain.posting.postingservice.PostingService;
 import team1.Daangn_Clonecoding.web.SessionConst;
 import team1.Daangn_Clonecoding.web.posting.dto.PostingDetailResponse;
-import team1.Daangn_Clonecoding.domain.posting.dto.PostingForm;
+import team1.Daangn_Clonecoding.domain.posting.dto.PostingRequest;
 import team1.Daangn_Clonecoding.web.posting.dto.PostingResponse;
 import team1.Daangn_Clonecoding.web.posting.dto.SimplePostingSuccessResponse;
 import team1.Daangn_Clonecoding.web.response.CommonResponse;
@@ -34,7 +34,7 @@ public class PostingController {
     @Operation(summary = "게시물 생성", description = "로그인 된 유저를 판매자로 설정하며 게시물을 생성한다.")
     public ResponseEntity<SimplePostingSuccessResponse> newPosting(@Parameter(description = "세션에서 가져오는 데이터로 값 입력 X")
                                   @SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId,
-                                                                   @ModelAttribute PostingForm form) {
+                                                                   @ModelAttribute PostingRequest form) {
 
         // 파일 저장 및 posting 생성 후 저장
         Long postingId = postingService.newPosting(form, memberId);
