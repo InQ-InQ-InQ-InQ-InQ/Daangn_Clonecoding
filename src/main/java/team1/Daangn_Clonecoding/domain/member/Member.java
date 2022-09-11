@@ -37,8 +37,15 @@ public class Member extends BaseEntity {
     private Double mTemp = 36.5;
 
     //편의 메서드
-    public void changeTemp(Double t) {
-        mTemp = t;
+
+    // 매너온도 내리기
+    public void lowerMTemp(Double amount) {
+        this.mTemp -= amount;
+    }
+
+    //매너온도 올리기
+    public void raiseMTemp(Double amount) {
+        this.mTemp += amount;
     }
 
     private Member(String name, String nickname, String phoneNumber, String loginId, String loginPw, Address address) {

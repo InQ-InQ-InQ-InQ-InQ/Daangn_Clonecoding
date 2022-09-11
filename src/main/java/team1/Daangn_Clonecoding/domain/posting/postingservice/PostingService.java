@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import team1.Daangn_Clonecoding.domain.file.FileStore;
 import team1.Daangn_Clonecoding.domain.file.UploadFile;
+import team1.Daangn_Clonecoding.domain.member.Evaluation;
 import team1.Daangn_Clonecoding.domain.member.Member;
 import team1.Daangn_Clonecoding.domain.member.memberrepository.MemberRepository;
 import team1.Daangn_Clonecoding.domain.posting.Posting;
@@ -88,6 +89,28 @@ public class PostingService {
         posting.changePostingType(PostingType.FIN);
     }
 
+    @Transactional
+    public void evaluateBuyer(Long postingId, Evaluation evaluation) {
+
+        Posting posting = findPostingWithBuyerById(postingId);
+        Member buyer = posting.getBuyer();
+
+        switch (evaluation) {
+            case VERY_BAD:
+                buyer.lowerMTemp(0.2);
+                break;
+            case BAD:
+                buyer.lowerMTemp(0.1);
+                break;
+            case GOOD:
+                buyer.raiseMTemp(0.1);
+                break;
+            case VERY_GOOD:
+                buyer.raiseMTemp(0.2);
+                break;
+        }
+    }
+//------------------------------------로컬 메서드----------------------------------------------
     //id로 posting 조회  (seller 패치조인)
     private Posting findPostingWithSellerById(Long id) {
         return postingRepository.findWithSellerById(id).orElseThrow(() -> new NotExistPkException("존재하지 않는 pk 입니다."));

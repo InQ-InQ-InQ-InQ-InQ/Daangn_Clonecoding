@@ -9,6 +9,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import team1.Daangn_Clonecoding.domain.member.Evaluation;
 import team1.Daangn_Clonecoding.domain.posting.Posting;
 import team1.Daangn_Clonecoding.domain.posting.postingrepository.PostingRepository;
 import team1.Daangn_Clonecoding.domain.posting.postingservice.PostingService;
@@ -77,10 +78,20 @@ public class PostingController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @PatchMapping("/posting/evaluation_buyer")
+    @Operation(summary = "거래 후 구매자 평가", description = "게시물을 구매완료 상태로 변경 후 판매자가 구매자를 평가한다.")
+    public ResponseEntity<Void> evaluateBuyer(@RequestParam Long postingId,
+                                              @RequestParam Evaluation evaluation) {
+
+        postingService.evaluateBuyer(postingId, evaluation);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
     @GetMapping("/purchase_log") //판매목록 조회
     @Operation(summary = "판매목록 조회", description = "로그인 된 회원이 판매중이거나 판매완료 된 게시물을 조회한다.")
     public CommonResponse<List<PostingResponse>> findPurchaseLogs(@Parameter(description = "세션에서 가져오는 데이터로 값 입력 X")
-                                                                     @SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId) {
+                                                                  @SessionAttribute(SessionConst.LOGIN_MEMBER) Long memberId) {
 
         List<Posting> postings = postingRepository.findByBuyer(memberId);
 

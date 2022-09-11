@@ -18,16 +18,18 @@ public interface PostingRepository extends JpaRepository<Posting, Long> {
 
     //seller 패치조인 findById
     @EntityGraph(attributePaths = "seller")
-    Optional<Posting> findWithSellerById(Long aLong);
+    Optional<Posting> findWithSellerById(Long id);
 
     //buyer 패치조인 findById
     @EntityGraph(attributePaths = "seller")
-    Optional<Posting> findWithBuyerById(Long aLong);
+    Optional<Posting> findWithBuyerById(Long id);
 
+    //buyer, seller 패치조인 findByBuyer
     @EntityGraph(attributePaths = {"buyer", "seller"})
     @Query("select p from Posting p where p.buyer.id = :memberId")
     List<Posting> findByBuyer(Long memberId);
 
+    //seller 패치조인 findBySeller
     @EntityGraph(attributePaths = "seller")
     @Query("select p from Posting p where p.seller.id = :memberId")
     List<Posting> findBySeller(Long memberId);
