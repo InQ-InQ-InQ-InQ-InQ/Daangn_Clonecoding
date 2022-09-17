@@ -44,7 +44,9 @@ public class MemberController {
 
         //TODO 에러 메세지 통일 상수 뽑기 혹은 국제화
         Optional<Member> optionalMember = memberRepository.findByLoginId(loginId);
-        optionalMember.orElseThrow(() -> new DuplicatedException("중복된 로그인 아이디 입니다."));
+        optionalMember.ifPresent((m) -> {
+            throw new DuplicatedException("중복된 로그인 아이디 입니다.");
+        });
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
@@ -54,7 +56,9 @@ public class MemberController {
     public ResponseEntity<Void> nicknameDuplicationCheck(@RequestParam String nickname) {
 
         Optional<Member> optionalMember = memberRepository.findByNickname(nickname);
-        optionalMember.orElseThrow(() -> new DuplicatedException("중복된 닉네임 입니다."));
+        optionalMember.ifPresent((m) -> {
+            throw new DuplicatedException("중복된 닉네임 입니다.");
+        });
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
@@ -64,7 +68,9 @@ public class MemberController {
     public ResponseEntity<Void> phoneNumberDuplicationCheck(@RequestParam String phoneNumber) {
 
         Optional<Member> optionalMember = memberRepository.findByPhoneNumber(phoneNumber);
-        optionalMember.orElseThrow(() -> new DuplicatedException("중복된 전화번호 입니다."));
+        optionalMember.ifPresent((m) -> {
+            throw new DuplicatedException("중복된 전화번호 입니다.");
+        });
 
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
